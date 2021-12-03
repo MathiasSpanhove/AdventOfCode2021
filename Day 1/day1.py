@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def solve_problem_1(depths):
     increases_in_depth = 0
 
@@ -20,7 +23,8 @@ def solve_problem_2(depths):
 
 
 if __name__ == '__main__':
-    with open("input.txt") as file:
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as file:
         data = [int(line.strip()) for line in file]
 
     solve_problem_1(data)

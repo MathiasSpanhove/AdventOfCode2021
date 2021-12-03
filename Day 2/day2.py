@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def solve_problem_1(commands):
     horizontal_pos = 0
     vertical_pos = 0
@@ -35,7 +38,8 @@ def solve_problem_2(commands):
 
 
 if __name__ == '__main__':
-    with open("input.txt") as file:
+    p = Path(__file__).with_name('input.txt')
+    with p.open('r') as file:
         data = [line.strip() for line in file]
 
     solve_problem_1(data)
